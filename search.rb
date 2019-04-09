@@ -7,8 +7,6 @@ class Search
     @data = RestClient.get(url, {:params => {:q => query}})
   end
 
-
-
   def print_links
     raw = @data.body.split('b_algo"><h2><a href="').drop(1)
     links = []
