@@ -1,10 +1,8 @@
-# use rest_client gem to perform Bing search
-
 require 'rest-client'
-
+# use rest_client gem to perform Bing search
 class Search
   def initialize(url, query)
-    @data = RestClient.get(url, {:params => {:q => query}})
+    @data = RestClient.get(url, params: { q: query })
   end
 
   def print_links
@@ -14,7 +12,7 @@ class Search
       temp = e.split('" ')
       links << temp[0]
     end
-    links.each {|l| puts l}
+    links.each { |l| puts l }
   end
 end
 
